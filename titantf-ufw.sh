@@ -1,6 +1,6 @@
 #!/bin/sh
 
-curl -s https://www.cloudflare.com/ips-v4 -o /tmp/titantf_ips
+curl -s https://raw.githubusercontent.com/TitanTF/titantf-ufw/master/ipv4.txt -o /tmp/titantf_ips
 echo "" >> /tmp/titantf_ips
 
 # Allow all traffic from Cloudflare IPs (no ports restriction)
