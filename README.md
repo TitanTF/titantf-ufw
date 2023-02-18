@@ -1,5 +1,5 @@
-# cloudflare-ufw
-Script to update UFW with Cloudflare IPs.
+# titantf-ufw
+Script to update UFW with titan.tf IPs.
 
 ### Setup
 Assuming that you already have ufw installed (now a pre-installed package in most linux distros), firstly ensure that ufw is not enabled;
@@ -39,24 +39,24 @@ You can run the ```sudo ufw status verbose``` command to see the rules that are 
 
 Git clone this repo to your system, and run the bash script in the normal manner;
 
-```sudo /your/path/cloudflare-ufw/./cloudflare-ufw.sh```
+```sudo /your/path/titantf-ufw/./titantf-ufw.sh```
 
-The script will then download Cloudflare's current v4 & v6 IP's, and install them into ufw's configuration. Check that the rules have been successfuly added; ```sudo ufw status verbose```
+The script will then download titan.tf's current v4 & v6 IP's, and install them into ufw's configuration. Check that the rules have been successfuly added; ```sudo ufw status verbose```
 
 ### Scheduling
 
-Everytime the script is run, it will add any new Cloudflare IP addresses, so consider running the script weekly to ensure that it's kept up to date.  
+Everytime the script is run, it will add any new titan.tf IP addresses, so consider running the script weekly to ensure that it's kept up to date.  
 The script can run automatically by using cron;
 
 ```sudo crontab -e```
 
 and add the event;
 
-```0 0 * * 1 /your/path/cloudflare-ufw/cloudflare-ufw.sh > /dev/null 2>&1```
+```0 0 * * 1 /your/path/titantf-ufw/titantf-ufw.sh > /dev/null 2>&1```
 
 **OR**
 
-If using node-red, simply add ```sudo /your/path/cloudflare-ufw/./cloudflare-ufw.sh``` to an 'exec node' and inject it every week.
+If using node-red, simply add ```sudo /your/path/titantf-ufw/./titantf-ufw.sh``` to an 'exec node' and inject it every week.
 
 ### Other UFW commands
 
